@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Encuentra y visualiza la ruta más corta de un caballo en el tablero de ajedrez."
+    />
+    <title>Knight's Travails</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="page-header">
+        <p class="eyebrow">Un reto de caminos mínimos</p>
+        <h1>Knight's Travails</h1>
+        <p class="intro">
+          Elige dos casillas y descubre la ruta más corta que puede recorrer el
+          caballo.
+        </p>
+      </header>
+
+      <section class="workspace" aria-label="Calculadora de movimientos">
+        <div class="board-panel">
+          <div class="board-heading">
+            <div>
+              <p class="eyebrow">Tablero</p>
+              <h2>Tu recorrido</h2>
+            </div>
+            <span class="board-size">8 × 8</span>
+          </div>
+          <div
+            id="chessboard"
+            class="chessboard"
+            role="group"
+            aria-label="Tablero de ajedrez. Selecciona la casilla de inicio y luego la de destino."
+          ></div>
+          <p class="board-hint">
+            <span class="legend-dot start-dot"></span> Inicio
+            <span class="legend-dot end-dot"></span> Destino
+            <span class="legend-dot path-dot"></span> Ruta
+          </p>
+        </div>
+
+        <aside class="details-panel">
+          <p class="eyebrow">Planifica tus movimientos</p>
+          <h2>¿A dónde vamos?</h2>
+          <p class="instructions">
+            Haz clic en una casilla para elegir el inicio y en otra para elegir
+            el destino.
+          </p>
+
+          <div class="locations" aria-live="polite">
+            <div class="location-card">
+              <span class="location-marker start-marker">01</span>
+              <div>
+                <span class="location-label">Inicio</span>
+                <strong id="start-coordinate">Sin elegir</strong>
+              </div>
+            </div>
+            <div class="location-card">
+              <span class="location-marker end-marker">02</span>
+              <div>
+                <span class="location-label">Destino</span>
+                <strong id="end-coordinate">Sin elegir</strong>
+              </div>
+            </div>
+          </div>
+
+          <button id="find-route" class="primary-button" type="button" disabled>
+            Encontrar ruta
+            <span aria-hidden="true">→</span>
+          </button>
+          <button id="reset-board" class="reset-button" type="button">
+            Reiniciar tablero
+          </button>
+
+          <div
+            id="route-result"
+            class="route-result"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <p class="result-placeholder">
+              Tu ruta aparecerá aquí, paso a paso.
+            </p>
+          </div>
+        </aside>
+      </section>
+      <footer>Un caballo siempre se mueve en forma de “L”.</footer>
+    </main>
+  </body>
+</html>
